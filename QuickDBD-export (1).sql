@@ -4,7 +4,7 @@
 -- -Crowdfunding_DB_Schema
 
 CREATE TABLE "categories" (
-    "category_id" INT   NOT NULL,
+    "category_id" VARCHAR(7)   NOT NULL,
     "category_name" VARCHAR(30)   NOT NULL,
     CONSTRAINT "pk_categories" PRIMARY KEY (
         "category_id"
@@ -12,7 +12,7 @@ CREATE TABLE "categories" (
 );
 
 CREATE TABLE "subcategories" (
-    "subcategory_id" INT   NOT NULL,
+    "subcategory_id"  VARCHAR(20)  NOT NULL,
     "subcategory_name" VARCHAR(30)   NOT NULL,
     CONSTRAINT "pk_subcategories" PRIMARY KEY (
         "subcategory_id"
@@ -42,8 +42,8 @@ CREATE TABLE "campaigns" (
     "currency" VARCHAR(10)   NOT NULL,
     "launch_date" TIMESTAMP   NOT NULL,
     "end_date" TIMESTAMP   NOT NULL,
-    "category_id" INT   NOT NULL,
-    "subcategory_id" INT   NOT NULL,
+    "category_id"  VARCHAR(30)  NOT NULL,
+    "subcategory_id" VARCHAR(30)  NOT NULL,
     CONSTRAINT "pk_campaigns" PRIMARY KEY (
         "cf_id"
      )
